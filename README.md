@@ -10,9 +10,9 @@ The outputs of our methods is under the "**model_outputs**" directory. The "**EM
 
 "**formal.sls_gpt**" is the result of "**S2S-SLS(GPT)**"
 
-"**formal.gpt_ft**" is the result of "**GPT-Finetune**"
+"**formal.seq2seq_gpt**" is the result of "**GPT-Finetune**"
 
-"**formal.our_nmt_cmb**" is the result of "**NMT-Combined\***".
+"**formal.seq2seq_rnn_cmb**" is the result of "**NMT-Combined\***".
 
 "**formal.our_pbmt_cmb**" is the result of "**PBMT-Combined\***".
 
@@ -20,7 +20,19 @@ We also provide the outputs of ablation test.
 
 ## 2. model scripts
 
-We will add a description soon.
+We implement the Transformer-based S2S-SLS model in **sls_gpt.py** and implement the RNN-based S2S-SLS model in **sls_rnn.py**.
+We release four python files for running different neural architectures on different domains:
+
+**sls_gpt_em.py** includes the APIs for training and testing the Transformer-based S2S-SLS model on Entertainment&Muisc.
+
+**sls_gpt_fr.py** includes the APIs for training and testing the Transformer-based S2S-SLS model on Family&Relationship.
+
+**sls_rnn_em.py** includes the APIs for training and testing the RNN-based S2S-SLS model on Entertainment&Muisc. 
+It is for both data-limited and data-augmentation scenarios.
+
+**sls_rnn_fr.py** includes the APIs for training and testing the RNN-based S2S-SLS model on Family&Relationship.
+It is for both data-limited and data-augmentation scenarios.
+
 
 ## 3. training data<div id="contact"></div>
 
@@ -28,7 +40,5 @@ The training data includes original GYAFC dataset, the outputs of a simple rule 
 
 ## 4. run
 
-Please see "main.py" for the details. 
-
-We suggest to use Pycharm to run this project.
+Our TensorFlow version is 1.12.0. We suggest to use Pycharm to run this project.
 
